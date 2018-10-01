@@ -1,0 +1,17 @@
+{{extends "templates/application.jet"}}
+
+{{block head()}}
+  {{yield seo(title=i18n("searchresults_page_header"))}}
+{{end}}
+
+{{block body()}}
+<div class="container page">
+
+  <div class="page-header text-center">
+    <h2>{{ i18n("searchresults_page_header") }}</h2>
+  </div>
+
+  <s72-searchresults search-param="q" partials-base-path="/partials" show-search-form="true" />
+
+</div>
+{{end}}

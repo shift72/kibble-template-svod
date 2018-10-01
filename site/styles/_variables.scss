@@ -1,0 +1,114 @@
+// This file contains any variables used by the site.
+// These variables should be reasonably generic so that overrides are placed in main.scss.
+
+// Bootstrap variables copied here, that some of the below are dependent on.
+$grid-gutter-width-base: 30px !default;
+
+// An extra XXL breakpoint added to the default set.
+// NOTE(gscragg): I would not advise changing these 2 variables here without consulting me first.
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1600px
+);
+
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1140px,
+  // NOTE(gscragg) this might need to be changed to 1540 if the gutters are fucked with this one
+  xxl: 1570px
+);
+
+// Body / Core
+// ------------------------------------
+$primary:         #FD4766;
+$secondary:       #373737;
+$body-bg:         #222;
+$body-color:      #fdfdfd;
+$hr-border-color: rgba(#fff, .5);
+
+$list-group-bg: $body-bg;
+$list-group-border-color: rgba(#fff, .125) !default;
+
+// Nav
+// ------------------------------------
+
+$navbar-logo-width: 211px;
+$navbar-logo-width-min: $navbar-logo-width;
+$navbar-brand-padding-y: 45px;
+$navbar-dark-active-color: $primary;
+$navbar-nav-link-padding-x:  1em;
+$navbar-nav-link-padding-y:  1em;
+
+// Uses navbar-dark theme so we can use variables for colouring
+$navbar-dark-active-color:  #FD4766;
+$navbar-dark-color:         $body-color;
+$navbar-dark-hover-color:   #FD4766;
+
+$subnav-background-color: #302e30;
+$subnav-nav-item-background-color: #2a2a2a;
+$subnav-nav-item-color: #fff;
+$subnav-nav-item-hover-background-color: $primary;
+$subnav-nav-item-active-background-color: $primary;
+$subnav-nav-item-margin-x: 1rem;
+$subnav-nav-item-margin-y: .5rem;
+$subnav-nav-item-border-radius: 2rem;
+
+// Meta Items
+// ------------------------------------
+
+$meta-item-border-radius: 3px;
+$featured-meta-item-body-padding: 10px;
+$meta-item-body-color: #fff;
+
+$meta-item-tagline-classification-border-radius: $meta-item-border-radius;
+
+$meta-item-availability-tag-margin: 5px;
+
+
+// Posters
+// ------------------------------------
+
+$poster-portrait-width: 282px !default;
+$poster-portrait-height: 422px !default;
+$poster-landscape-width: 585px !default;
+$poster-landscape-height: 330px !default;
+$poster-carousel-width: 1600px !default;
+$poster-carousel-height: 600px !default;
+
+$poster-landscape-size-ratio: ($poster-landscape-height / $poster-landscape-width);
+$poster-portrait-size-ratio: ($poster-portrait-height / $poster-portrait-width);
+$poster-carousel-size-ratio: ($poster-carousel-height / $poster-carousel-width);
+
+$poster-border-radius: $meta-item-border-radius !default;
+
+// Page Collections
+// ------------------------------------
+
+$page-collection-container-width: 1140px !default;
+$page-collection-item-padding-horizontal: $grid-gutter-width-base / 2 !default;
+
+// Sliders
+// ------------------------------------
+
+$slider-control-width: 50px !default;
+$slider-control-height: 50px !default;
+// $slider-control-color: $text-color-light !default;
+$slider-control-bg: rgba(255, 255, 255, 0.5) !default;
+
+// Icons
+// ------------------------------------
+
+$icon-play-size: 32px !default;
+$icon-play-color: #fff !default;
+$icon-play-bg: rgba(#000, 0.5) !default;
+$icon-play-hover-color: #fff !default;
+$icon-play-hover-bg: rgba(#fff, 0.5) !default;
+
+// Modals
+// ------------------------------------

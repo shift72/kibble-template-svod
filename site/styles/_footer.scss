@@ -1,0 +1,42 @@
+footer {
+	margin-top: 40px;
+	background: #000;
+	padding: 40px 0;
+}
+
+.footer-screenplus {
+	display: flex;
+	text-align: center;
+	justify-content: center;
+	flex-direction: column;
+}
+
+.footer-screenplus-brand {
+	@extend .text-hide;
+
+	@include hover() {
+		@extend .text-hide;
+	}
+
+	height: 100px;
+	width: 100%;
+	margin: 0 auto;
+	max-width: $navbar-logo-width;
+
+	background: url('../images/common/logo.png') left center/100% no-repeat;
+
+	@media only screen and (-webkit-min-device-pixel-ratio: 2),only screen and (min-resolution: 192dpi) {
+    background: url("../images/common/logo@2x.png") left center/100% no-repeat;
+ 	}
+}
+
+.footer-screenplus-brand,
+.footer-screenplus-powered-by,
+.footer-screenplus-copyright {
+	font-size: 12px;
+	display: inline-block;
+}
+
+.footer-screenplus-copyright  {
+	margin: 10px 0;
+}

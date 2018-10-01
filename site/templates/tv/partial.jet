@@ -1,0 +1,40 @@
+{{import "../items/tagline.jet"}}
+
+<div class="partial partial-tvseason">
+  <a href="{{routeToSlug(tvseason.Slug)}}">
+    <div class="poster poster-portrait">
+      <s72-availability-status data-slug="{{tvseason.Slug}}"></s72-availability-status>
+      <s72-availability-label data-slug="{{tvseason.Slug}}"></s72-availability-label>
+
+      <s72-image src="{{tvseason.Images.Portrait}}" alt="{{tvseason.Title}}" class="poster-image poster-image-portrait" border="0"></s72-image>
+
+      <div class="hover">
+        <div class="content d-flex">
+          <s72-play-button data-slug="{{tvseason.Slug}}" title="{{tvseason.Title}}"></s72-play-button>
+
+          {{if isset(tvseason["Tagline"])}}
+            <div class="meta-item-synopsis hidden-md">
+              <p>{{tvseason.Tagline}}</p>
+            </div>
+          {{end}}
+
+          <div class="buttons">
+            {{if isset(tvseason["Trailers"]) && len(tvseason.Trailers) > 0}}
+              <s72-trailer-button data-slug="{{tvseason.Slug}}" data-url="{{tvseason.Trailers}}" button-class="btn-sm"></s72-trailer-button>
+            {{end}}
+          </div>
+
+          <div class="buttons">
+            <s72-pricing-buttons data-slug="{{tvseason.Slug}}" class="pricing-buttons-fit" title="{{tvseason.Title}}"></s72-pricing-buttons>
+          </div>
+        </div>
+      </div>
+    </div>
+  </a>
+
+  <div class="caption">
+    {{title := i18n("tvseason", map("ShowInfo", tvseason.ShowInfo, "Season", tvseason))}}
+    <div class="title" title="{{title}}">{{title}}</div>
+    {{yield metaItemTagline(genres=false) tvseason}}
+  </div>
+</div>

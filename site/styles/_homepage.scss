@@ -1,0 +1,404 @@
+// All this masonry shit is based on using carousel images
+// When we allow these new custom sized images, then this will have to change.
+$homepage-brick-margin: 5px;
+$homepage-masonry-height-xs: 190px;
+$homepage-masonry-height-sm: 280px;
+$homepage-masonry-height-md: 420px;
+$homepage-masonry-height-lg: 600px;
+$homepage-masonry-height-xl: 700px;
+$homepage-masonry-height-xxl: 800px;
+
+h2 {
+
+  &.masonry-title {
+
+    font-size: 24px;
+    font-weight: 800;
+    margin-top: 40px;
+    text-transform: uppercase;
+
+  }
+
+}
+
+.masonry {
+
+  flex-flow: row wrap;
+  flex: 1;
+  flex-basis: 0;
+  flex-shrink: 1;
+  align-items: stretch;
+  margin-top: ($homepage-brick-margin * 2) - ($grid-gutter-width / 2);
+  overflow: hidden;
+
+  .brick {
+
+    flex-grow: 2;
+    width: 100%;
+    margin-bottom: $homepage-brick-margin;
+    height: $homepage-masonry-height-xs;
+
+    a {
+
+      &:hover, &:active, &:focus {
+
+        s72-image {
+
+          opacity: 0.8;
+          transition: opacity .25s ease;
+
+        }
+
+      }
+
+    }
+
+    &:nth-child(2),
+    &:nth-child(3) {
+
+      flex-grow: 1;
+
+    }
+
+    &:nth-child(3){
+
+      margin-bottom: 0;
+
+    }
+
+    s72-image {
+
+      transition: opacity .25s ease;
+
+    }
+
+    s72-image,
+    .meta-item,
+    .meta-item > a,
+    .meta-item-img {
+
+      height: 100%;
+      max-width: none;
+
+    }
+
+    .meta-item-img {
+
+      position: absolute;
+      // left: -45%;
+
+    }
+
+  }
+
+  @include media-breakpoint-up(sm) {
+
+    flex-flow: column wrap;
+    width: 100%;
+    height: $homepage-masonry-height-sm;
+    margin-top: ($homepage-brick-margin * 8) - ($grid-gutter-width / 2);
+
+    .brick {
+
+      width: 50%;
+      height: ($homepage-masonry-height-sm / 2) - $homepage-brick-margin;
+
+      .meta-item-body {
+
+        padding: 10px;
+
+      }
+
+      .meta-item-img {
+
+        position: absolute;
+        left: 0;
+
+      }
+
+      &:nth-child(1) {
+
+        height: $homepage-masonry-height-sm;
+        padding-right: $homepage-brick-margin;
+
+        .meta-item-img {
+
+          position: absolute;
+          left: -100%;
+
+        }
+
+      }
+
+    }
+
+  }
+
+  @include media-breakpoint-up(md) {
+
+    height: $homepage-masonry-height-md;
+
+    .brick {
+
+      height: ($homepage-masonry-height-md / 2) - $homepage-brick-margin;
+
+      .meta-item-body {
+
+        padding: 30px;
+
+      }
+
+      &:nth-child(1) {
+
+        height: $homepage-masonry-height-md;
+
+        .meta-item-img {
+
+          left: auto;
+          right: -100%;
+
+        }
+
+      }
+
+    }
+
+  }
+
+  @include media-breakpoint-up(lg) {
+
+    height: $homepage-masonry-height-lg;
+
+    .brick {
+
+      height: ($homepage-masonry-height-lg / 2) - $homepage-brick-margin;
+
+      .meta-item-body {
+
+        padding: 20px;
+
+      }
+
+      &:nth-child(1) {
+
+        height: $homepage-masonry-height-lg;
+
+        .meta-item-img {
+
+          left: auto;
+          right: -600px;
+
+        }
+
+      }
+
+    }
+
+  }
+
+  @include media-breakpoint-up(xl) {
+
+    height: $homepage-masonry-height-xl;
+
+    .brick {
+
+      height: ($homepage-masonry-height-xl / 2) - $homepage-brick-margin;
+
+      .meta-item-body {
+
+        padding: 30px;
+
+      }
+
+      &:nth-child(1) {
+
+        height: $homepage-masonry-height-xl;
+
+        .meta-item-img {
+
+          left: auto;
+          right: -600px;
+
+        }
+
+      }
+
+    }
+
+  }
+
+  @include media-breakpoint-up(xxl) {
+
+    height: $homepage-masonry-height-xxl;
+
+    .brick {
+
+      height: ($homepage-masonry-height-xxl / 2) - $homepage-brick-margin;
+
+
+      &:nth-child(1) {
+
+        height: $homepage-masonry-height-xxl;
+
+      }
+
+    }
+
+  }
+
+}
+
+// these variables arent in the main file as they are very specific to this file and this client.
+// And I dont want them copypasted into other client sites.
+$cinebuzz-margin: 40px;
+$cinebuzz-product-margin: 2px;
+
+.cinebuzz {
+
+  @extend .text-center;
+  margin-top: $cinebuzz-margin / 4;
+  padding: $cinebuzz-margin 0;
+  background: url(../images/cinebuzz/top-background.png)
+              no-repeat;
+  background-position: top center;
+
+  .cinebuzz-title {
+
+    @extend .text-hide;
+    background-image: url(../images/common/cinebuzz-logo.png);
+    width: 193px;
+    height: 69px;
+    margin: 0 auto $cinebuzz-margin / 2 auto;
+    background-size: contain;
+    background-repeat: no-repeat;
+
+  }
+
+  .cinebuzz-text {
+
+    margin: $cinebuzz-margin / 2 auto;
+    font-size: 14px;
+    max-width: 440px;
+
+    @include media-breakpoint-up(md) {
+
+      font-size: 18px;
+
+    }
+
+  }
+
+  .cinebuzz-products {
+
+    padding: ($cinebuzz-margin - $cinebuzz-product-margin) 0;
+    background: url(../images/cinebuzz/bottom-background.png)
+              no-repeat;
+    background-position: bottom center;
+    font-size: 0; // remove mysterious margin on inline-block elements
+
+  }
+
+  .cinebuzz-product {
+
+    @include text-hide();
+    width: 151px;
+    height: 66px;
+    display: inline-block;
+    border-radius: 6px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin: $cinebuzz-product-margin;
+
+    &.rewards               { background-image: url(../images/cinebuzz/cinebuzz-rewards.png); }
+    &.for-students          { background-image: url(../images/cinebuzz/cinebuzz-for-students.png); }
+    &.chicks-at-the-flicks  { background-image: url(../images/cinebuzz/cinebuzz-chicks-at-the-flicks.png); }
+    &.for-seniors           { background-image: url(../images/cinebuzz/cinebuzz-for-seniors.png); }
+    &.crew                  { background-image: url(../images/cinebuzz/cinebuzz-crew.png); }
+    &.vip                   { background-image: url(../images/cinebuzz/cinebuzz-vip.png); }
+  }
+
+}
+
+.homepage-pink {
+
+  padding-top: 40px;
+  margin-bottom: 40px;
+  margin-top: 100px;
+  padding-bottom: 120px;
+  background-color: $primary;
+  position: relative;
+
+  &:before {
+
+    content: '';
+    left: 0;
+    top: 0;
+    position: absolute;
+    width: 100%;
+    background: $primary;
+    height: 200px;
+    transform: skewY(3deg);
+
+  }
+
+  &:after {
+
+    content: '';
+    right: 0;
+    top: 0;
+    position: absolute;
+    width: 100%;
+    background: $primary;
+    height: 200px;
+    transform: skewY(-3deg);
+
+  }
+
+  .s72-slider-control {
+    border-color: transparent;
+    background-color: $body-bg;
+  }
+
+  s72-slider.has-next:after {
+    @include gradient-x(transparent, rgba($primary, .9), 0%, 100%);
+  }
+
+  s72-slider.has-prev:before {
+    @include gradient-x(rgba($primary, .9), transparent, 0%, 100%);
+  }
+
+}
+
+.last-slider {
+
+  position: relative;
+  margin-top: -100px;
+  padding-top: 40px;
+
+  &:before {
+
+    content: '';
+    left: 0;
+    top: 0;
+    position: absolute;
+    width: 100%;
+    background: #222;
+    height: 200px;
+    transform: skewY(3deg);
+
+  }
+
+  &:after {
+
+    content: '';
+    right: 0;
+    top: 0;
+    position: absolute;
+    width: 100%;
+    background: #222;
+    height: 200px;
+    transform: skewY(-3deg);
+
+  }
+
+}

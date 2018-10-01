@@ -1,0 +1,39 @@
+{{import "../items/tagline.jet"}}
+
+<div class="partial partial-film">
+  <a href="{{routeToSlug(film.Slug)}}">
+    <div class="poster poster-portrait">
+      <s72-availability-status data-slug="{{film.Slug}}"></s72-availability-status>
+      <s72-availability-label data-slug="{{film.Slug}}"></s72-availability-label>
+
+      <s72-image src="{{film.Images.Portrait}}" alt="{{film.Title}}" class="poster-image poster-image-portrait" border="0"></s72-image>
+
+      <div class="hover">
+        <div class="content d-flex">
+          <s72-play-button data-slug="{{film.Slug}}" title="{{film.Title}}"></s72-play-button>
+
+          {{if isset(film["Tagline"])}}
+            <div class="meta-item-synopsis hidden-md">
+              <p>{{film.Tagline}}</p>
+            </div>
+          {{end}}
+
+          <div class="buttons">
+            {{if isset(film["Trailers"]) && len(film.Trailers) > 0}}
+              <s72-trailer-button data-slug="{{film.Slug}}" data-url="{{film.Trailers}}" button-class="btn-sm"></s72-trailer-button>
+            {{end}}
+          </div>
+
+          <div class="buttons">
+            <s72-pricing-buttons data-slug="{{film.Slug}}" class="pricing-buttons-fit" title="{{film.Title}}"></s72-pricing-buttons>
+          </div>
+        </div>
+      </div>
+    </div>
+  </a>
+
+  <div class="caption">
+    <div class="title" title="{{film.Title}}">{{film.Title}}</div>
+    {{yield metaItemTagline(genres=false) film}}
+  </div>
+</div>

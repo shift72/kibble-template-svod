@@ -1,0 +1,29 @@
+{{block footer()}}
+<footer>
+
+	{{if len(site.Navigation.Footer) > 0}}
+		<ul class="nav justify-content-center">
+			{{range site.Navigation.Footer}}
+			  <li class="nav-item {{len(.Link.ExternalURL) == 0 && routeToSlug(.Link.Slug) == currentUrlPath ? "active" : ""}}"><a class="nav-link" href="{{ len(.Link.ExternalURL) > 0 ? .Link.ExternalURL : routeToSlug(.Link.Slug) }}">{{ .Label }}</a>
+			{{end}}
+	  </ul>
+	{{end}}
+
+	<div class="footer-screenplus">
+
+		<a href="/" class="footer-screenplus-brand">
+			ScreenPlus
+		</a>
+
+    <a href="http://www.screenplus.co" class="footer-screenplus-powered-by">
+    	<span>Powered by ScreenPlus</span>
+    </a>
+
+    <p class="footer-screenplus-copyright">
+      &copy; ScreenPlus - All Rights Reserved.
+    </p>
+
+	</div>
+
+</footer>
+{{end}}
