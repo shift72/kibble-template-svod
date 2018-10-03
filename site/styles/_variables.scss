@@ -65,7 +65,9 @@ $meta-item-body-padding: 15px;
 $meta-item-border-radius: 3px;
 $meta-item-body-color: #fff;
 $meta-item-body-bg: rgba(0,0,0,0.8) !default;
-$meta-item-body-font-size: 14px !default;
+$meta-item-body-font-size: .9px !default;
+$meta-item-caption-font-size: .9rem !default;
+$meta-item-caption-padding-y: .5rem !default;
 
 $meta-item-tagline-classification-border-radius: $meta-item-border-radius;
 

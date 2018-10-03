@@ -17,6 +17,7 @@
   "nav_signup": { "other": "Create an Account" },
   "nav_signed_in_as": { "other": "Signed in as" },
   "nav_library": { "other": "My Library" },
+  "nav_subscriptions": { "other": "My Subscriptions" },
   "nav_devices": { "other": "My Devices" },
   "nav_account": { "other": "My Account" },
   "nav_signout": { "other": "Sign Out" },
@@ -24,11 +25,20 @@
   "runtime_hours": { "other": "h" },
   "runtime_minutes": { "other": "m" },
 
+  "modal_cancel": { "other": "Cancel" },
+
   "datetime_next": { "other": "this {{.Date}}" },
 
   "search_control_placeholder": { "other": "Search" },
 
-  "play_button_watch": { "other" : "Watch Now"},
+  "play_button_watch": { "other": "Watch Now"},
+
+  "pricing_quality_hd": { "other": "HD" },
+  "pricing_quality_sd": { "other": "SD" },
+  "pricing_quality_hd_only": { "other": "HD Only" },
+  "pricing_quality_sd_only": { "other": "SD Only" },
+  "pricing_ownership_buy": { "other": "Buy" },
+  "pricing_ownership_rent": { "other": "Rent" },
 
   "homepage_header": { "other" : "Featured"},
   "page_collection_see_all": { "other" : "See All"},
@@ -100,7 +110,7 @@
   "activatedevice_form_pin": { "other": "PIN Code" },
   "activatedevice_form_submit": { "other": "Activate" },
   "activatedevice_form_error_invalid_code": { "other": "PIN Code not found, please try again." },
-  "activatedevice_form_error_pin_not_found": { "other": "Please enter a PIN code." },
+  "activatedevice_form_error_pin_not_found": { "other": "PIN Code not found, please try again." },
   "activatedevice_signin_prompt": { "other": "Please sign in before activating your device." },
   "activatedevice_page_activated": { "other": "Thank you for activating {{.DeviceName}}. You should now be able to browse your library on your television or device." },
 
@@ -147,6 +157,7 @@
   "shopping_info_subtitle_help": { "other": "See here for system requirements." },
   "shopping_info_ownership_buy": { "other": "Purchase" },
   "shopping_info_ownership_rent": { "other": "Rental" },
+  "shopping_info_ownership_plan": { "other": "Subscription"},
 
   "shopping_info_sd_only": { "other": "Limited to SD playback only." },
   "shopping_info_release_date_title": { "other": "Releases {{.Date}}. " },
@@ -180,16 +191,38 @@
     "other": "Once you press play on an episode, the watch window begins and you have {{.Count}} hours to watch that episode as many times as you like."
   },
   "shopping_info_credit_bonus_title": { "other": "{{.BonusPercentage}}% Bonus" },
+  "shopping_info_trial_period_offer": {
+    "one": "Try your free 24hr trial now!",
+    "other": "Try your free {{.Count}} day trial!"
+  },
+  "shopping_info_plan_offer": {
+    "one": "Automatically renews every {{.Interval}}",
+    "other": "Automatically renews every {{.Count}} {{.Interval}}s"
+  },
+
+  "shopping_price_you_pay": { "other": "You pay" },
+  "shopping_price_nothing": { "other": "Nothing" },
+  "shopping_price_free": { "other": "Free" },
+  "shopping_price_title_plan": { "other": "Price" },
+  "shopping_price_plan_note": {
+    "zero": "Charged every {{.Interval}}.",
+    "one": "Charged every {{.Interval}} after your 24 hour free trial ends.",
+    "other": "Charged every {{.Interval}} after your {{.Count}} day free trial ends."
+  },
+
+  "shopping_price_plan_note_interval": {
+    "one": "{{.Interval}}",
+    "other": "{{.Count}} {{.Interval}}s"
+  },
+
+  "shopping_enter_card_prompt": { "other": "Enter your credit card details below to complete your {{.Verb}}." },
+  "shopping_enter_card_prompt_plan": { "other": "Enter your credit card details below in order start your subscription." },
 
   "shopping_terms": { "other": "By completing this transaction, I agree to the <a href=\"/page/terms-and-conditions/\" target=\"_blank\" tabindex=\"-1\">terms and conditions</a>."},
   "shopping_discount_applied": { "other": "{{.DiscountAmount}} discount applied." },
   "shopping_discount_apply": { "other": "Apply" },
   "shopping_discount_code": { "other": "Enter a promo code." },
   "shopping_discount_have_code": { "other": "I have a promo code." },
-
-  "shopping_price_you_pay": { "other": "You pay" },
-  "shopping_price_nothing": { "other": "Nothing" },
-  "shopping_price_free": { "other": "Free" },
 
   "shopping_auth_directions": { "other": "An account is needed first. Please enter your email address." },
 
@@ -222,6 +255,11 @@
   "shopping_error_discounts_not_allowed": { "other": "That promo code can not be used." },
   "shopping_error_discount_disallowed_on_bundles": { "other": "That promo code can not be used on bundles." },
 
+  "shopping_action_buy": { "other": "Buy" },
+  "shopping_action_rent": { "other": "Rent" },
+  "shopping_action_credit": { "other": "Top up" },
+  "shopping_action_plan": { "other": "Complete" },
+
   "shopping_complete_rental": { "other": "Thank you for renting {{.Title}}." },
   "shopping_complete_rental_period": {
     "one": "You are now able to watch it as often as you like over the next day.",
@@ -249,6 +287,12 @@
     "one": "You will be able to watch it from {{.Date}} and your rental will remain active for a day.",
     "other": "You will be able to watch it from {{.Date}} and your rental will remain active for {{.Count}} days."
   },
+  "shopping_complete_subscription": {
+    "other": "Your subscription purchase was successful. You are now subscribed to {{.Title}}."
+  },
+  "shopping_complete_subscription_browse": {
+    "other": "Feel free to <a href=\"/\">browse around</a> the site, or <a href=\"/search.html\">search</a> for something specific."
+  },
 
   "meta_detail_cast_title": { "other": "Cast" },
   "meta_detail_crew_title": { "other": "Crew" },
@@ -259,5 +303,33 @@
 
   "bundle_items_all_films": { "other": "{{.Count}} films" },
   "bundle_items_all_seasons": { "other": "{{.Count}} seasons" },
-  "bundle_items_mixed": { "other": "{{.Count}} films and seasons" }
+  "bundle_items_mixed": { "other": "{{.Count}} films and seasons" },
+
+  "plans_page_header": { "other": "Available Plans" },
+  "plan_label_owned" : {"other": "You own this plan" },
+
+  "usersubscriptions_page_header": { "other": "Subscriptions and Billing" },
+  "usersubscriptions_page_content": { "other": " " },
+  "usersubscriptions_payment_section_title": { "other": "Payment Method" },
+  "usersubscriptions_payment_section_content": { "other": "You can change the credit card used for billing for any subscriptions you currently have. Any change will take effect when you are next billed for each subscription." },
+  "usersubscriptions_change_payment_method_change": { "other": "Change Credit Card" },
+
+  "usersubscriptions_subscriptions_section_title": { "other": "Subscription Details" },
+  "usersubscriptions_subscriptions_section_content": { "other": " " },
+  "usersubscriptions_subscription_status_active": { "other": "Active" },
+  "usersubscriptions_subscription_status_trialing": { "other": "Trial Period" },
+  "usersubscriptions_subscription_expiry": { "other": "Expires {{.Expiry}}" },
+
+  "usersubscriptions_subscription_unsubscribe": { "other": "Unsubscribe" },
+  "usersubscriptions_unsubscribe_modal_cancel": { "other": "Cancel" },
+  "usersubscriptions_unsubscribe_modal_confirm": { "other": "Yes, unsubscribe" },
+  "usersubscriptions_unsubscribe_modal_title": { "other": "Cancel subscription?" },
+  "usersubscriptions_unsubscribe_modal_body": { "other": "This will unsubscribe you from the {{.Name}} plan. You will still be able to watch the content in the plan until it expires {{.Expiry}}." },
+
+  "usersubscriptions_change_payment_method_modal_title": { "other": "Update credit card details" },
+  "usersubscriptions_change_payment_method_modal_submit": { "other": "Update" },
+
+  "shopping_card_update_reason_none": { "other": "Update your credit card. Supported cards are Visa, Mastercard and American Express." },
+  "shopping_card_update_reason_expired": { "other": "Please update your card to resume your subsubscription. Supported cards are Visa, Mastercard and American Express." }
+
 }

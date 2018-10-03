@@ -98,6 +98,11 @@
   color: $meta-item-body-color;
 }
 
+.meta-item-caption {
+  padding-top: $meta-item-caption-padding-y;
+  font-size: $meta-item-caption-font-size;
+}
+
 .featured-meta-item {
 
   position: relative;

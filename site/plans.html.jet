@@ -1,0 +1,37 @@
+{{extends "templates/application.jet"}}
+
+{{block head()}}
+  {{yield seo(title=i18n("plans_page_header"), index=false)}}
+{{end}}
+
+{{block body()}}
+  <div class="container page">
+    <div class="page-header text-center">
+      <h2>{{ i18n("plans_page_header") }}</h2>
+    </div>
+
+    <div class="d-flex justify-content-center">
+      {{ range _, p := site.Plans }}
+        {{ if p.Interval }}
+          <div class="plan">
+            <div class="plan-name">{{p.Name}}</div>
+            <div class="plan-description">{{p.Description}}</div>
+            {{ if p.Interval }}
+              <div class="plan-details">{{i18n("shopping_info_plan_offer", map("Interval", p.Interval, "Count", p.IntervalCount))}}</div>
+              {{ if p.TrialPeriodDays }}
+              <div class="plan-trial-period">{{i18n("shopping_info_trial_period_offer", p.TrialPeriodDays)}}</div>
+              {{ end }}
+            {{ end }}
+            {{ if isset(p.PortraitImage)}}
+            <img src="{{p.PortraitImage}}" />
+            {{ end }}
+            <div class="plan-buttons">
+              <s72-pricing-buttons data-slug="{{p.Slug}}" class="plan-buttons" data-title="{{p.Name}}" />
+            </div>
+            <s72-plan-label data-slug="{{p.Slug}}" class="plan-buttons" data-title="{{p.Name}}"/>
+          </div>
+        {{ end}}
+      {{ end }}
+    </div>
+  </div>
+{{end}}
