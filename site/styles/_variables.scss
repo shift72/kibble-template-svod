@@ -61,14 +61,17 @@ $subnav-nav-item-border-radius: 2rem;
 
 // Meta Items
 // ------------------------------------
-
+$meta-item-body-padding: 15px;
 $meta-item-border-radius: 3px;
-$featured-meta-item-body-padding: 10px;
 $meta-item-body-color: #fff;
+$meta-item-body-bg: rgba(0,0,0,0.8) !default;
+$meta-item-body-font-size: 14px !default;
 
 $meta-item-tagline-classification-border-radius: $meta-item-border-radius;
 
 $meta-item-availability-tag-margin: 5px;
+
+$featured-meta-item-body-padding: 10px;
 
 
 // Posters
@@ -87,19 +90,28 @@ $poster-carousel-size-ratio: ($poster-carousel-height / $poster-carousel-width);
 
 $poster-border-radius: $meta-item-border-radius !default;
 
-// Page Collections
-// ------------------------------------
-
-$page-collection-container-width: 1140px !default;
-$page-collection-item-padding-horizontal: $grid-gutter-width-base / 2 !default;
-
 // Sliders
 // ------------------------------------
 
 $slider-control-width: 50px !default;
 $slider-control-height: 50px !default;
-// $slider-control-color: $text-color-light !default;
-$slider-control-bg: rgba(255, 255, 255, 0.5) !default;
+$slider-control-color: #fff !default;
+$slider-control-icon-size: 32px !default;
+$slider-control-bg: $primary !default;
+$slider-control-border: $slider-control-bg !default;
+$slider-control-hover-bg: darken($primary, 7.5%) !default;
+
+$slider-container-width: 1140px !default; // base value that item widths are calculated off
+$slider-item-gutter-width: 10px !default; //bs4 grid-gutter-width is wider than we like
+
+// Page Collections
+// ------------------------------------
+
+$page-collection-container-width: $slider-container-width !default;
+$page-collection-item-gutter-width: $slider-item-gutter-width !default;
+
+$page-collection-title-font-size: 1.5rem !default;
+$page-collection-title-padding-y: 20px !default;
 
 // Icons
 // ------------------------------------

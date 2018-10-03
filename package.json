@@ -23,13 +23,12 @@
   "author": "Shift 72",
   "dependencies": {
     "autoprefixer": "^7.1.2",
-    "binwrap": "^0.2.0",
     "bootstrap": "^4.0.0",
     "cssnano": "^3.10.0",
     "font-awesome": "^4.7.0",
     "node-sass": "^4.9.3",
     "npm-run-all": "^4.0.2",
     "postcss-cli": "^4.1.0",
-    "s72-kibble": "^0.10.4"
+    "s72-kibble": "^0.10.5"
   }
 }

@@ -30,6 +30,9 @@
 
   "play_button_watch": { "other" : "Watch Now"},
 
+  "homepage_header": { "other" : "Featured"},
+  "page_collection_see_all": { "other" : "See All"},
+
   "signup_page_header": { "other": "Create an Account" },
   "signup_form_name": { "other": "Name" },
   "signup_form_email": { "other": "Email address" },

@@ -4,8 +4,8 @@ s72-slider .s72-slider-control {
   height: $slider-control-height;
   width: $slider-control-width;
   left: -$slider-control-width / 2;
-  background-color: $primary;
-  border: 1px solid $primary;
+  background-color: $slider-control-bg;
+  border: 1px solid $slider-control-border;
   border-radius: 50%;
   z-index: 10;
   margin-top: 0;
@@ -19,12 +19,11 @@ s72-slider .s72-slider-control {
 
   .s72-icon {
 
-    font-size: 32px;
-    color: #fff;
+    font-size: $slider-control-icon-size;
+    color: $slider-control-color;
     position: absolute;
     left: 50%;
     top: 50%;
-    // background: black;
     transform: translateX(-50%) translateY(-50%);
 
     // NOTE(gscragg):
@@ -41,17 +40,15 @@ s72-slider .s72-slider-control {
   }
 
   &:hover, &:active, &:focus {
-
-    background: darken($primary, 7.5%);
-
+    background: $slider-control-hover-bg;
   }
 
 }
 
 // make .slider-control be in the middle of the poster, not the middle of the item (which includes captions).
 @for $i from 1 through 10 {
-  $width: round($page-collection-container-width / $i);
-  $child-width: $width - ($page-collection-item-padding-horizontal * 2);
+  $width: round($slider-container-width / $i);
+  $child-width: $width - ($slider-item-gutter-width);
 
   .slider-#{$i} {
 
@@ -65,7 +62,7 @@ s72-slider .s72-slider-control {
   }
 }
 
-.s72-slider-container {
+s72-slider .s72-slider-container {
 
 
 }
@@ -124,8 +121,14 @@ s72-slider.has-next.s72-slider-scroll:after {
   .s72-slider-fluid {
 
     .s72-slider-container-container {
-      position: static;
       @extend .container;
+
+      position: static;
     }
   }
+}
+
+s72-slider .s72-slider-item-wrapper {
+  margin-left: $slider-item-gutter-width / -2;
+  margin-right: $slider-item-gutter-width / -2;
 }

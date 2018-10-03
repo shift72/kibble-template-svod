@@ -2,21 +2,20 @@
 
 {{block pageCollectionList()}}
 {{if len(.Items) > 0}}
-<div class="page-collection page-collection-list page-collection-list-{{.ItemsPerRow}} page-collection-list-{{.ItemLayout}} list-{{.ItemsPerRow}} list-{{.ItemLayout}} container">
+<div class="page-collection page-collection-list page-collection-list-{{.ItemsPerRow}} page-collection-list-{{.ItemLayout}}">
 
-  <div class="page-collection-list-title">
-
-    <h3>{{.DisplayName}}</h3>
-    {*<a href="/collection/{{.ID}}/{{.Slug}}" class="btn btn-see-all">See All</a>*}
-
+  <div class="page-collection-header">
+    <h3 class="page-collection-title">{{.DisplayName}}</h3>
   </div>
 
-  <div class="page-collection-items collection-items">
-    {{range item := .Items}}
-      <div class="page-collection-item page-collection-list-item page-collection-list-item-{{.ItemLayout}} page-collection-item-{{.ItemLayout}} page-collection-list-item-{{.ItemsPerRow}} page-collection-item-{{.ItemsPerRow}}">
-        {{yield pageCollectionItem(item=item, layout=.ItemLayout)}}
-      </div>
-    {{end}}
+  <div class="list-container">
+    <div class="list-item-wrapper">
+      {{range item := .Items}}
+        <div class="page-collection-item page-collection-list-item page-collection-list-item-{{.ItemLayout}} page-collection-item-{{.ItemLayout}} page-collection-list-item-{{.ItemsPerRow}} page-collection-item-{{.ItemsPerRow}}">
+          {{yield pageCollectionItem(item=item, layout=.ItemLayout)}}
+        </div>
+      {{end}}
+    </div>
   </div>
 
 </div>

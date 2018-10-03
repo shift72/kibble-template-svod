@@ -7,8 +7,7 @@
 
     <div class="collapse navbar-collapse">
       <ul class="navbar-nav mr-auto" id="main-navbar">
-        <li class="primary-nav-item"><a href="/" class="nav-link active">Movies On-Demand</a></li>
-        <li class="nav-item"><a href="/" class="nav-link">Movies at the Cinema</a></li>
+        <!-- <li class="nav-item"><a href="/" class="nav-link">Main Nav link</a></li> -->
       </ul>
 
       <form class="form-search navbar-nav-search" action="/search.html">
@@ -29,7 +28,6 @@
           <s72-dropdown class="navbar-nav-user-nav">
             <a href="#" class="s72-btn s72-dropdown-toggle">{{i18n("nav_signed_in_as")}} <s72-username></s72-username></a>
             <div class="s72-dropdown-menu s72-dropdown-menu-right">
-              <a class="s72-dropdown-item" href="/library.html">{{i18n("nav_library")}}</a>
               <a class="s72-dropdown-item" href="/devices.html">{{i18n("nav_devices")}}</a>
               <a class="s72-dropdown-item" href="/account.html">{{i18n("nav_account")}}</a>
               <s72-sign-out class="s72-dropdown-item">{{i18n("nav_signout")}}</s72-sign-out>

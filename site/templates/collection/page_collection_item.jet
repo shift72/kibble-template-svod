@@ -1,74 +1,7 @@
-{{import "../items/tagline.jet"}}
+{{import "../items/meta_item.jet"}}
 
 {{block pageCollectionItem(item, layout)}}
-	{{isPage := hasPrefix(item.Slug, "/page/")}}
-	{{isExternalPage := isPage && item.InnerItem.PageType != "external"}}
-	{{isCollection := hasPrefix(item.Slug, "/collection/")}}
-	{{imageUrl := ""}}
 
-	{{if layout == "portrait" && isset(item.Images["Portrait"])}}
-		{{imageUrl = item.Images.Portrait}}
-	{{else if layout == "landscape" && isset(item.Images["Landscape"])}}
-		{{imageUrl = item.Images.Landscape}}
-	{{end}}
-
-	{{if len(imageUrl) == 0 && isPage}}
-		{{imageUrl = layout == "portrait" ? "/images/missing/page-portrait.png" : "/images/missing/page-landscape.png"}}
-	{{else if len(imageUrl) == 0 && isCollection}}
-		{{imageUrl = layout == "portrait" ? "/images/missing/collection-portrait.png" : "/images/missing/collection-landscape.png"}}
-	{{end}}
-
-  <a href="{{routeToSlug(item.Slug)}}" target="{{isExternalPage ? "_blank" : ""}}">
-    <div class="poster poster-{{layout}}">
-      <s72-availability-status data-slug="{{item.Slug}}"></s72-availability-status>
-      <s72-availability-label data-slug="{{item.Slug}}"></s72-availability-label>
-
-			<s72-image src="{{imageUrl}}" alt="{{item.Title}}" class="poster-image poster-image-{{layout}}" border="0"></s72-image>
-
-			{{if !isExternalPage}}
-				<div class="hover">
-
-					<div class="content d-flex">
-						<s72-play-button data-slug="{{item.Slug}}" title="{{item.Title}}"></s72-play-button>
-						<div class="titles" style="display: none;">
-							<h4 title="{{item.Title}}">{{item.Title}}</h4>
-							{{if isset(item["ItemType"])}}
-								<div class="tagline" title="{{item.ItemType}}">{{item.ItemType}}</div>
-							{{end}}
-							{{if isset(item["Bonuses"]) && len(item.Bonuses) > 0}}
-								<div class="bonuses">incl. extras</div>
-							{{end}}
-						</div>
-
-						{{if isset(item.InnerItem["Tagline"])}}
-				          <div class="meta-item-synopsis hidden-md">
-				            <p>{{item.InnerItem.Tagline}}</p>
-				          </div>
-				        {{end}}
-
-						{{if isset(item["Bonuses"]) && len(item.Bonuses) > 0}}
-							<div class="bonuses">incl. extras</div>
-						{{end}}
-
-						<div class="buttons">
-							{{if isset(item["Trailers"]) && len(item.Trailers) > 0}}
-								<s72-trailer-button data-slug="{{item.Slug}}" data-url="{{item.Trailers}}" data-use-tooltip="{{(layout == "landscape") ? true : false}}" button-class="btn-sm"></s72-trailer-button>
-							{{end}}
-						</div>
-
-						<div class="buttons">
-							<s72-pricing-buttons data-slug="{{item.Slug}}" class="pricing-buttons-fit" title="{{item.Title}}"></s72-pricing-buttons>
-
-						</div>
-					</div>
-				</div>
-			{{end}}
-    </div>
-  </a>
-
-	<div class="caption">
-		<div class="title" title="{{item.GetTitle(i18n)}}">{{item.GetTitle(i18n)}}</div>
-		{{yield metaItemTagline(genres=false) item.InnerItem}}
-	</div>
+  {{yield metaItem(item=item, layout=layout)}}
 
 {{end}}

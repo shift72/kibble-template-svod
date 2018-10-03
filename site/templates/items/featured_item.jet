@@ -4,7 +4,7 @@
 <div class="meta-item featured-meta-item meta-item-{{item.ItemType|lower}}">
   <a href="{{routeToSlug(item.Slug)}}">
     {{if isset(item.Images[image])}}
-      <s72-image src="{{item.Images[image]}}" alt="{{item.Title}}" class="meta-item-img featured-meta-item-img"></s72-image>
+      <s72-image src="{{item.Images[image]}}" alt="{{item.Title}}" class="poster-image poster-image-featured"></s72-image>
     {{end}}
 
     <s72-availability-status data-slug="{{item.Slug}}"></s72-availability-status>
@@ -31,26 +31,6 @@
             <s72-modal-player src="{{item.InnerItem.Trailers[0].URL}}" class="btn-sm" data-label="{{i18n("play_trailer")}}"></s72-modal-player>
           {{end}}
         </div>
-
-
-        <!--div class="content">
-          <h3>{{item.Title}} {{if isset(item["season"])}}<span class="small">{{item.season}}</span>{{end}}</h3>
-
-            {*<p class="tagline">{{item.ReleaseDate}}</p>*}
-
-            {*<p class="synopsis visible-sm">{{item.Tagline}}</p>*}
-
-          <div class="buttons">
-            <watch-button data-slug="item.Slug"></watch-button>
-            <pricing-buttons data-slug="item.Slug"></pricing-buttons>
-          </div>
-
-            {*<p class="synopsis visible-md visible-lg">{{item.Tagline}}</p>*}
-
-          <share-buttons item="::item.meta" class="hidden-sm hidden-xs pull-right"></share-buttons>
-          <trailer-button item="::item.meta" button-class="btn-sm" class="hidden-sm hidden-xs"></trailer-button>
-
-        </div -->
       </div>
     {{end}}
   </a>
