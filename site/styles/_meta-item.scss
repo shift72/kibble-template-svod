@@ -1,4 +1,5 @@
 .meta-item {
+  position: relative;
 
   a { display: inline-block; }
 
@@ -9,16 +10,15 @@
 }
 
 .meta-item-body {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
+  @include stretch();
+
   z-index: 2;
   padding: $meta-item-body-padding;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
+  font-size: $meta-item-body-font-size;
+  color: $meta-item-body-color;
 
   &.hover {
     opacity: 0;
@@ -42,17 +42,10 @@
 }
 
 .meta-item-title {
-  font-family: 'Rawline', sans-serif;
-  font-weight: 700;
-  text-shadow: 1px 1px 2px #000;
-  color: $meta-item-body-color;
+  font-weight: bold;
 }
 
 .meta-item-text {
-  font-size: $meta-item-body-font-size;
-  font-weight: 600;
-  color: $meta-item-body-color;
-  width: 100%;
 
   .meta-item-tagline {
     margin-bottom: 0;
@@ -60,17 +53,11 @@
 }
 
 .meta-item-synopsis {
-  font-size: 10px;
-  font-weight: 600;
-  color: $meta-item-body-color;
+  display: none;
+  overflow: hidden;
 
-  @include media-breakpoint-down(md) {
-    display: none !important;
-  }
-
-  @include media-breakpoint-up(lg) {
-    font-size: 12px;
-    padding-top: 10px;
+  @include media-breakpoint-up(md) {
+    display: flex;
     flex-direction: row;
     align-items: flex-end;
   }
@@ -94,20 +81,17 @@
   .verb { display: block; }
 }
 
-.meta-item-tagline {
-  color: $meta-item-body-color;
-}
-
 .meta-item-caption {
+  color: $meta-item-caption-color;
   padding-top: $meta-item-caption-padding-y;
   font-size: $meta-item-caption-font-size;
+
+  .meta-item-tagline { font-size: 80%; }
 }
 
 .featured-meta-item {
-
-  position: relative;
-  border-radius: $meta-item-border-radius;
   overflow: hidden;
+  border-radius: $meta-item-border-radius;
 
   s72-availability-status { top: $meta-item-availability-tag-margin; right: $meta-item-availability-tag-margin; }
   s72-availability-label  { top: $meta-item-availability-tag-margin; left: $meta-item-availability-tag-margin; }
@@ -118,29 +102,13 @@
   }
 
   .meta-item-title {
-    font-size: 14px;
-
-    @include media-breakpoint-up(md) {
-      font-size: 18px;
-    }
-
-    @include media-breakpoint-up(lg) {
-      font-size: 28px;
-    }
+    font-size: $h4-font-size;
+    line-height: $headings-line-height;
+    text-shadow: 1px 1px 2px #000;
   }
 
   .meta-item-text {
-    font-size: 10px;
-
-    @include media-breakpoint-up(md) {
-      font-size: 12px;
-      padding-top: 5px;
-    }
-
-    @include media-breakpoint-up(lg) {
-      font-size: 14px;
-      padding-top: 10px;
-    }
+    padding-top: 5px;
   }
 
 }

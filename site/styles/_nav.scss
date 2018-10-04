@@ -1,13 +1,5 @@
 .navbar {
 
-  background-color: #000;
-  padding-top: 0;
-  padding-bottom: 0;
-
-  li.active {
-    border-bottom: 4px solid $navbar-dark-active-color;
-  }
-
   .btn-signup,
   .btn-signin {
     @include media-breakpoint-down(md){
@@ -20,20 +12,6 @@
 .navbar-nav {
   s72-user-anon {
     white-space: nowrap;
-  }
-
-  .nav-link {
-
-    font-weight: 800;
-    font-size: 18px;
-
-    @include media-breakpoint-up(md){
-      // this is now the only padding nav links have
-      // all other nav items (brand, and buttons)
-      // only seem to have padding because they are vertically aligned together.
-      padding-top: $navbar-padding-y * 4;
-      padding-bottom: $navbar-padding-y * 4;
-    }
   }
 
   .s72-username {
@@ -62,33 +40,6 @@
     margin-left: 10px;
   }
 
-}
-
-.primary-nav-item,
-.primary-nav-dropdown {
-  @extend .nav-item;
-  @extend .active;
-}
-
-.primary-nav-item {
-  display: none;
-  @extend .d-md-block;
-}
-
-.primary-nav-dropdown {
-  @extend .d-md-none;
-
-  .s72-dropdown-menu {
-    background-color: $subnav-background-color;
-
-    .dropdown-item {
-      color: $subnav-nav-item-color;
-
-      @include hover-focus{
-        background-color: $subnav-nav-item-hover-background-color;
-      }
-    }
-  }
 }
 
 .navbar-nav-user-nav {

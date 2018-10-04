@@ -26,24 +26,19 @@ $container-max-widths: (
 
 // Body / Core
 // ------------------------------------
-$primary:         #FD4766;
-$secondary:       #373737;
-$body-bg:         #222;
-$body-color:      #fdfdfd;
-$hr-border-color: rgba(#fff, .5);
-
-$list-group-bg: $body-bg;
-$list-group-border-color: rgba(#fff, .125) !default;
+$primary:         #007bff !default; // BS4 default
+$body-bg:         #fff !default; // BS4 default
+$body-color:      #212529 !default; // BS4 default
 
 // Nav
 // ------------------------------------
 
-$navbar-logo-width: 211px;
+$navbar-logo-width: 153px; // width of raw logo
 $navbar-logo-width-min: $navbar-logo-width;
 $navbar-brand-padding-y: 45px;
 $navbar-dark-active-color: $primary;
-$navbar-nav-link-padding-x:  1em;
-$navbar-nav-link-padding-y:  1em;
+$navbar-nav-link-padding-x:  1rem;
+$navbar-nav-link-padding-y:  1rem;
 
 // Uses navbar-dark theme so we can use variables for colouring
 $navbar-dark-active-color:  #FD4766;
@@ -61,12 +56,15 @@ $subnav-nav-item-border-radius: 2rem;
 
 // Meta Items
 // ------------------------------------
-$meta-item-body-padding: 15px;
 $meta-item-border-radius: 3px;
+
+$meta-item-body-padding: 15px;
 $meta-item-body-color: #fff;
 $meta-item-body-bg: rgba(0,0,0,0.8) !default;
-$meta-item-body-font-size: .9px !default;
-$meta-item-caption-font-size: .9rem !default;
+$meta-item-body-font-size: 1rem !default;
+
+$meta-item-caption-color: $body-color !default;
+$meta-item-caption-font-size: 1rem !default;
 $meta-item-caption-padding-y: .5rem !default;
 
 $meta-item-tagline-classification-border-radius: $meta-item-border-radius;

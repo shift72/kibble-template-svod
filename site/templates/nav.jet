@@ -1,4 +1,4 @@
-{{block nav(showSubNav=true)}}
+{{block nav()}}
   <nav class="navbar navbar-expand-md navbar-dark">
     <a class="navbar-brand" href="/">SCREENPLUS</a>
     <button class="navbar-toggler" type="button" s72-collapse=".collapse" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
@@ -6,9 +6,24 @@
     </button>
 
     <div class="collapse navbar-collapse">
-      <ul class="navbar-nav mr-auto" id="main-navbar">
-        <!-- <li class="nav-item"><a href="/" class="nav-link">Main Nav link</a></li> -->
-      </ul>
+      <div class="navbar-nav mr-auto" id="main-navbar">
+        {{range site.Navigation.Header}}
+          {{if len(.Items) > 0}}
+            <s72-dropdown class="nav-item">
+              <a class="s72-dropdown-toggle nav-link" href="{{ len(.Link.ExternalURL) > 0 ? .Link.ExternalURL : len(.Items) == 0 ? routeToSlug(.Link.Slug) : "#" }}">{{ .Label }}</a>
+              <div class="s72-dropdown-menu sub-nav-menu">
+                {{range sub := .Items}}
+                  <a class="nav-link" href="{{ len(sub.Link.ExternalURL) > 0 ? sub.Link.ExternalURL : routeToSlug(sub.Link.Slug) }}">{{ sub.Label }}</a>
+                {{end}}
+              </div>
+            </s72-dropdown>
+          {{else}}
+            <div class="nav-item {{len(.Link.ExternalURL) == 0 && routeToSlug(.Link.Slug) == currentUrlPath ? "active" : ""}}">
+              <a class="nav-link" href="{{ len(.Link.ExternalURL) > 0 ? .Link.ExternalURL : routeToSlug(.Link.Slug) }}">{{ .Label }}</a>
+            </div>
+          {{end}}
+        {{end}}
+      </div>
 
       <form class="form-search navbar-nav-search" action="/search.html">
         <input class="form-control form-control-search" type="search" placeholder="{{i18n("search_control_placeholder")}}" name="q">
@@ -38,25 +53,4 @@
       </div>
     </div>
   </nav>
-
-  {{if len(site.Navigation.Header) > 0 && showSubNav}}
-    <ul class="sub-nav collapse">
-      {{range site.Navigation.Header}}
-        {{if len(.Items) > 0}}
-          <s72-dropdown class="nav-item">
-            <a class="s72-dropdown-toggle nav-link" href="{{ len(.Link.ExternalURL) > 0 ? .Link.ExternalURL : len(.Items) == 0 ? routeToSlug(.Link.Slug) : "#" }}">{{ .Label }}</a>
-            <div class="s72-dropdown-menu sub-nav-menu">
-              {{range sub := .Items}}
-                <a class="nav-link" href="{{ len(sub.Link.ExternalURL) > 0 ? sub.Link.ExternalURL : routeToSlug(sub.Link.Slug) }}">{{ sub.Label }}</a>
-              {{end}}
-            </div>
-          </s72-dropdown>
-        {{else}}
-          <li class="nav-item {{len(.Link.ExternalURL) == 0 && routeToSlug(.Link.Slug) == currentUrlPath ? "active" : ""}}">
-            <a class="nav-link" href="{{ len(.Link.ExternalURL) > 0 ? .Link.ExternalURL : routeToSlug(.Link.Slug) }}">{{ .Label }}</a>
-          </li>
-        {{end}}
-      {{end}}
-    </ul>
-  {{end}}
 {{end}}
