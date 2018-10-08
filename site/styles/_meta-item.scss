@@ -22,11 +22,11 @@
 
   &.hover {
     opacity: 0;
-    transition: opacity .25s ease;
+    transition: opacity $meta-item-hover-time ease;
     background-color: $meta-item-body-bg;
 
     // half assed attempt at making each thing inside the hover is aligned nicely.
-    & > * {
+    > * {
       flex: 1 1 0;
       display: flex;
     }
