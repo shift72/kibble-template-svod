@@ -1,5 +1,5 @@
 {{block nav()}}
-  <nav class="navbar navbar-expand-md navbar-dark">
+  <nav class="navbar navbar-expand-md">
     <a class="navbar-brand" href="/">SCREENPLUS</a>
     <button class="navbar-toggler" type="button" s72-collapse=".collapse" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
       <span class="icon-navbar-toggler"></span>
@@ -11,9 +11,9 @@
           {{if len(.Items) > 0}}
             <s72-dropdown class="nav-item">
               <a class="s72-dropdown-toggle nav-link" href="{{ len(.Link.ExternalURL) > 0 ? .Link.ExternalURL : len(.Items) == 0 ? routeToSlug(.Link.Slug) : "#" }}">{{ .Label }}</a>
-              <div class="s72-dropdown-menu sub-nav-menu">
+              <div class="s72-dropdown-menu">
                 {{range sub := .Items}}
-                  <a class="nav-link" href="{{ len(sub.Link.ExternalURL) > 0 ? sub.Link.ExternalURL : routeToSlug(sub.Link.Slug) }}">{{ sub.Label }}</a>
+                  <a class="dropdown-item" href="{{ len(sub.Link.ExternalURL) > 0 ? sub.Link.ExternalURL : routeToSlug(sub.Link.Slug) }}">{{ sub.Label }}</a>
                 {{end}}
               </div>
             </s72-dropdown>
@@ -25,12 +25,11 @@
         {{end}}
       </div>
 
-      <form class="form-search navbar-nav-search" action="/search.html">
-        <input class="form-control form-control-search" type="search" placeholder="{{i18n("search_control_placeholder")}}" name="q">
-        <button class="sr-only" type="submit">Search</button>
-      </form>
-
       <div class="navbar-nav">
+        <a href="/search.html" class="btn navbar-search btn-outline-primary">
+          <i class="icon-search"></i>
+          <span class="navbar-search-label">{{i18n("search_control_placeholder")}}</span>
+        </a>
 
         <s72-user-anon>
           <a class="btn btn-signin" href="/signin.html">{{i18n("nav_signin")}}</a>

@@ -12,6 +12,7 @@
   </div>
 
   <s72-searchresults search-param="q" partials-base-path="/partials" show-search-form="true" />
+  <script>s72('run', function(){  document.querySelector('.s72-form-control-search').focus(); });</script>
 
 </div>
 {{end}}

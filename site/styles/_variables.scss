@@ -36,23 +36,22 @@ $body-color:      #212529 !default; // BS4 default
 $navbar-logo-width: 153px; // width of raw logo
 $navbar-logo-width-min: $navbar-logo-width;
 $navbar-brand-padding-y: 45px;
-$navbar-dark-active-color: $primary;
+
 $navbar-nav-link-padding-x:  1rem;
 $navbar-nav-link-padding-y:  1rem;
 
-// Uses navbar-dark theme so we can use variables for colouring
-$navbar-dark-active-color:  #FD4766;
-$navbar-dark-color:         $body-color;
-$navbar-dark-hover-color:   #FD4766;
+$navbar-nav-link-color:         rgba(#000, .5) !default;
+$navbar-nav-link-hover-color:   rgba(#000, .7) !default;
+$navbar-nav-link-active-color:  rgba(#000, .9) !default;
 
-$subnav-background-color: #302e30;
-$subnav-nav-item-background-color: #2a2a2a;
-$subnav-nav-item-color: #fff;
-$subnav-nav-item-hover-background-color: $primary;
-$subnav-nav-item-active-background-color: $primary;
-$subnav-nav-item-margin-x: 1rem;
-$subnav-nav-item-margin-y: .5rem;
-$subnav-nav-item-border-radius: 2rem;
+$subnav-background-color: $body-bg !default;
+$subnav-nav-item-background-color: transparent !default;
+$subnav-nav-item-color: $navbar-nav-link-color;
+$subnav-nav-item-hover-background-color: transparent !default;
+$subnav-nav-item-active-background-color: transparent !default;
+$subnav-nav-item-margin-x: 1rem !default;
+$subnav-nav-item-margin-y: .5rem !default;
+$subnav-nav-item-border-radius: 2rem !default;
 
 // Footer
 // ------------------------------------

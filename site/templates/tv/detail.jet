@@ -43,48 +43,47 @@
 
         <div class="meta-detail-content">
 
-          <h1>{{tvseason.GetTitle(i18n)}}</h1>
-
+          <h1 class="meta-detail-title">{{tvseason.GetTitle(i18n)}}</h1>
           <div class="meta-detail-tagline">
             {{yield metaItemTagline() tvseason}}
           </div>
 
-          <div class="meta-detail-buttons">
-            <s72-pricing-buttons data-slug="{{tvseason.Slug}}" data-title="{{tvseason.Title}}"></s72-pricing-buttons>
-
-            {{if len(tvseason.Trailers) > 0 }}
+          {{if len(tvseason.Trailers) > 0 }}
+            <div class="meta-detail-buttons">
               <s72-can-be-watched data-slug="{{tvseason.Slug}}">
                 <s72-modal-player src="{{tvseason.Trailers[0].URL}}" data-label="{{i18n("play_trailer")}}"></s72-modal-player>
               </s72-can-be-watched>
-            {{end}}
-          </div>
+            </div>
+          {{end}}
 
           <div class="meta-detail-synopsis">{{tvseason.Overview | raw}}</div>
 
-          <div class="meta-detail-cast">
-
-            <h3>{{i18n("meta_detail_cast_title")}}</h3>
-
-            <p>
-              {{range index, member := tvseason.Cast}}
-                {{member.Name}}{{if index < len(tvseason.Cast) - 1}}, {{end}}
-              {{end}}
-            </p>
-
-          </div>
-
-          <div class="meta-detail-crew d-flex">
-
-            {{range index, member := tvseason.Crew}}
-              <div class="crew-member">
-                <h4>{{member.Job}}</h4>
-                <p>{{member.Name}}</p>
+          {{if len(tvseason.Cast) > 0}}
+            <div class="meta-detail-cast">
+              <h3>{{i18n("meta_detail_cast_title")}}</h3>
+              <div class="cast-members">
+                {{range index, member := tvseason.Cast}}
+                  {{member.Name}}{{if index < len(tvseason.Cast) - 1}}, {{end}}
+                {{end}}
               </div>
-            {{end}}
-          </div>
+            </div>
+          {{end}}
+
+          {{if len(tvseason.Crew) > 0}}
+            <div class="meta-detail-crew">
+              <h3>{{i18n("meta_detail_crew_title")}}</h3>
+              <div class="crew-members">
+                {{range index, member := tvseason.Crew}}
+                  <div class="crew-member">
+                    <span class="crew-member-job">{{member.Job}}</span>
+                    <span class="crew-member-name">{{member.Name}}</span>
+                  </div>
+                {{end}}
+              </div>
+            </div>
+          {{end}}
 
           {{if len(tvseason.Episodes) > 0}}
-
             <div class="meta-detail-episodes">
               <h3>{{i18n("meta_detail_episodes_title")}}</h3>
               {{yield slider(itemsPerRow=6, itemLayout="portrait") content}}
@@ -95,22 +94,19 @@
                 {{end}}
               {{end}}
             </div>
-
           {{end}}
 
           {{if len(tvseason.Recommendations) > 0 }}
-
-              <div class="meta-detail-recommendations">
-                <h4>{{i18n("meta_detail_recommendations_title")}}</h4>
-                {{yield slider(itemsPerRow=6, itemLayout="portrait") content}}
-                  {{range item := tvseason.Recommendations}}
-                    <div class="slider-item slider-item-6">
-                      {{yield pageCollectionItem(item=item, layout="portrait")}}
-                    </div>
-                  {{end}}
+            <div class="meta-detail-recommendations">
+              <h3>{{i18n("meta_detail_recommendations_title")}}</h4>
+              {{yield slider(itemsPerRow=6, itemLayout="portrait") content}}
+                {{range item := tvseason.Recommendations}}
+                  <div class="slider-item slider-item-6">
+                    {{yield metaItem(item=item, layout="portrait")}}
+                  </div>
                 {{end}}
-              </div>
-
+              {{end}}
+            </div>
           {{end}}
 
         </div>
