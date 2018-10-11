@@ -123,6 +123,12 @@
     padding-top: 5px;
   }
 
+  .meta-item-buttons {
+    @include media-breakpoint-down(md) {
+      display: none;
+    }
+  }
+
 }
 
 .featured-meta-item-body {
