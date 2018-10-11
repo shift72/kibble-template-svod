@@ -8,8 +8,8 @@
     <h3 class="page-collection-title">{{.DisplayName}}</h3>
   </div>
 
-  <div class="list-container">
-    <div class="list-item-wrapper">
+  <div class="page-collection-list-container">
+    <div class="page-collection-list-item-wrapper">
       {{range item := .Items}}
         <div class="page-collection-item page-collection-list-item page-collection-list-item-{{.ItemLayout}} page-collection-item-{{.ItemLayout}} page-collection-list-item-{{.ItemsPerRow}} page-collection-item-{{.ItemsPerRow}}">
           {{yield pageCollectionItem(item=item, layout=.ItemLayout)}}
