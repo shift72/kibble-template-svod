@@ -6,22 +6,19 @@
 .s72-searchresults-results {
   @extend .row;
 
-  .partial {
+  .meta-item {
     @extend .slider-item;
     @extend .slider-item-6;
     padding-bottom: $grid-gutter-width;
   }
 }
 
-.s72-searchresults-total {
-  margin-bottom: 1rem;
-}
-
 .s72-searchresults-empty {
   text-align: center;
 }
 
-.s72-form-search {
+.s72-form-search,
+.s72-searchresults-total {
   max-width: map-get($container-max-widths, md);
   margin: 0 auto 1rem auto;
 }

@@ -5,14 +5,18 @@
 {{end}}
 
 {{block body()}}
-<div class="container page">
+<div class="page search-page">
 
-  <div class="page-header text-center">
-    <h2>{{ i18n("searchresults_page_header") }}</h2>
+  <div class="container">
+    <div class="page-header form-page-header">
+      <h1>{{ i18n("searchresults_page_header") }}</h1>
+    </div>
+
+    <div class="page-content">
+      <s72-searchresults search-param="q" partials-base-path="/partials" show-search-form="true" />
+    </div>
   </div>
 
-  <s72-searchresults search-param="q" partials-base-path="/partials" show-search-form="true" />
   <script>s72('run', function(){  document.querySelector('.s72-form-control-search').focus(); });</script>
-
 </div>
 {{end}}
