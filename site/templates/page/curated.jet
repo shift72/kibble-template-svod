@@ -2,7 +2,7 @@
 {{import "templates/collection/page_collection.jet"}}
 
 {{block body()}}
-<div class="page page-{{page.PageType}}">
+<div class="page page-{{page.PageType}} curated-page">
   <div class="container">
     <div class="page-header">
       <h1>{{ page.Title }}</h1>

@@ -9,6 +9,9 @@
   "tvseason": {
     "other": "{{.ShowInfo.Title}} Seasón {{.Season.SeasonNumber}}"
   },
+  "tvseason_title_html": {
+    "other": "{{.ShowInfo.Title}} <small>Seasón {{.Season.SeasonNumber}}</small>"
+  },
   "episode_count": {
     "one": "1 Episode",
     "other": "{{.Count}} Episodes"

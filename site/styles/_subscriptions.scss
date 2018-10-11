@@ -1,4 +1,6 @@
-.s72-userdevices-header { display: none; }
+.usersubscriptions-page .page-content {
+  max-width: 800px;
+}
 
 .s72-subscriptions-list { @extend .list-group; }
 .s72-subscriptions-list-item { @extend .list-group-item; }
@@ -35,6 +37,10 @@
     right: $list-group-item-padding-x;
     top: $list-group-item-padding-y;
   }
+}
+
+.s72-btn-updatecreditcard {
+  @extend .btn-outline-secondary;
 }
 
 .s72-btn-unsubscribe {

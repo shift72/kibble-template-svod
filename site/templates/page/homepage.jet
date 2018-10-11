@@ -16,7 +16,7 @@
 
   {{count := len(page.PageCollections)}}
 
-  <div class="page page-{{page.PageType|lower}}">
+  <div class="page page-{{page.PageType|lower}} homepage">
 
     {{if count > 0 && len(page.PageCollections[0].Items) >= 3}}
       <div class="container">

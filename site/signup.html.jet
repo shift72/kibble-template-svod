@@ -5,13 +5,16 @@
 {{end}}
 
 {{block body()}}
-  <div class="container page form-page">
-    <div class="page-header text-center">
-      <h2>{{ i18n("signup_page_header") }}</h2>
-    </div>
+  <div class="page form-page usersignup-page">
 
-    <div class="d-flex justify-content-center">
-      <s72-signup-form />
+    <div class="container">
+      <div class="page-header form-page-header">
+        <h1 class="page-title form-page-title">{{ i18n("signup_page_header") }}</h1>
+      </div>
+
+      <div class="page-content form-page-content">
+        <s72-signup-form />
+      </div>
     </div>
 
   </div>

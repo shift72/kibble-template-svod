@@ -24,13 +24,6 @@
       "pageSize": 0
     },
     {
-      "name": "filmIndex",
-      "urlPath": "/film/",
-      "templatePath": "templates/film/index.jet",
-      "datasource": "FilmIndex",
-      "pageSize": 0
-    },
-    {
       "name": "tvItem",
       "urlPath": "/tv/:slug/:seasonNumber",
       "templatePath": "templates/tv/detail.jet",
@@ -47,13 +40,6 @@
       "partialTemplatePath": "templates/page/partial.jet",
       "datasource": "Page",
       "pageSize": 0
-    },
-    {
-      "name": "pageIndex",
-      "urlPath": "/page/:index/",
-      "templatePath": "templates/page/index.jet",
-      "datasource": "PageIndex",
-      "pageSize": 10
     },
     {
       "name": "collectionItem",

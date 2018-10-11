@@ -5,18 +5,18 @@
 {{end}}
 
 {{block body()}}
-<div class="container page form-page">
+  <div class="page form-page activatedevice-page">
 
-  <div class="page-header text-center">
-    <h2>{{ i18n("activatedevice_page_header") }}</h2>
+    <div class="container">
+      <div class="page-header form-page-header">
+        <h1 class="page-title form-page-title">{{ i18n("activatedevice_page_header") }}</h1>
+      </div>
+
+      <div class="page-content form-page-content">
+        <p>{{i18n("activatedevice_page_content")}}</p>
+        <s72-activatedevice-form code-param="code" signin-url="/signin.html"></s72-activatedevice-form>
+      </div>
+    </div>
+
   </div>
-
-  <div class="form-block">
-    <p>{{i18n("activatedevice_page_content")}}</p>
-
-
-    <s72-activatedevice-form code-param="code" signin-url="/signin.html"></s72-activatedevice-form>
-  </div>
-
-</div>
 {{end}}

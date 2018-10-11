@@ -26,7 +26,7 @@
       </div>
 
       <div class="navbar-nav">
-        <a href="/search.html" class="btn navbar-search btn-outline-primary">
+        <a href="/search.html" class="btn-navbar-search">
           <i class="icon-search"></i>
           <span class="navbar-search-label">{{i18n("search_control_placeholder")}}</span>
         </a>

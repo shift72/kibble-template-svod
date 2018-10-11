@@ -25,12 +25,12 @@
         <s72-availability-status data-slug="{{item.Slug}}"></s72-availability-status>
         <s72-availability-label data-slug="{{item.Slug}}"></s72-availability-label>
 
-        <s72-image src="{{imageUrl}}" alt="{{item.Title}}" class="poster-image poster-image-{{layout}}" border="0"></s72-image>
+        <s72-image src="{{imageUrl}}" alt="{{item.GetTranslatedTitle(i18n, "")}}" class="poster-image poster-image-{{layout}}" border="0"></s72-image>
 
         {{if !isExternalPage}}
           <div class="meta-item-body hover">
 
-            <s72-play-button data-slug="{{item.Slug}}" title="{{item.Title}}" class="meta-item-play-btn"></s72-play-button>
+            <s72-play-button data-slug="{{item.Slug}}" data-title="{{item.GetTranslatedTitle(i18n, "")}}" class="meta-item-play-btn"></s72-play-button>
 
             {{if isset(item.InnerItem["Tagline"])}}
               <div class="meta-item-synopsis">{{item.InnerItem.Tagline}}</div>
@@ -46,7 +46,7 @@
       </div>
 
       <div class="meta-item-caption">
-        <div class="meta-item-title" title="{{item.GetTitle(i18n)}}">{{item.GetTitle(i18n)}}</div>
+        <div class="meta-item-title">{{item.GetTranslatedTitle(i18n, (item.ItemType + "_title_html"))|raw}}</div>
         {{yield metaItemTagline(genres=false) item.InnerItem}}
       </div>
     </a>

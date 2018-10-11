@@ -1,13 +1,3 @@
-<div class="partial partial-collection">
-  <a href="{{routeToSlug(collection.Slug)}}">
-    <div class="poster poster-portrait">
-      <s72-image src="{{len(collection.Images.Portrait) > 0 ? collection.Images.Portrait : "/images/missing/collection-portrait.png"}}" alt="{{collection.Title}}" class="poster-image poster-image-portrait" border="0"></s72-image>
+{{import "../items/meta_item.jet"}}
 
-      <div class="hover"></div>
-    </div>
-  </a>
-
-  <div class="caption">
-    <div class="title" title="{{collection.Title}}">{{collection.Title}}</div>
-  </div>
-</div>
+{{yield metaItem(item=collection.GetGenericItem(), layout="portrait")}}
