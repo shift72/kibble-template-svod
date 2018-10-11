@@ -154,41 +154,33 @@ s72-cant-be-watched {
 }
 
 .s72-btn-play {
-
   @extend .btn-link;
+
   font-weight: 700;
   color: $primary;
   padding-left: 0;
   border: 0 none;
 
   .s72-icon-play {
-
     margin-right: 5px;
 
     circle { fill: $primary; }
+
     circle, path {
-
       stroke: $primary;
-      // modified from $btn-transition
       transition: stroke .15s ease-in-out, fill .15s ease-in-out;
-
     }
 
     path {
-
       fill: #fff;
       stroke: #fff;
-
     }
   }
 
   @include hover-focus {
-
     text-decoration: none;
 
     .s72-icon-play {
-      // path { stroke: darken($primary, 7.5%); }
-      // path { fill: darken($primary, 7.5%); }
       circle { fill: rgba($primary, 0.5); } //darken($primary, 7.5%)
     }
   }
