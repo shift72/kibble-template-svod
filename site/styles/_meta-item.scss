@@ -37,7 +37,15 @@
 
   &:hover {
     text-decoration: none;
-    .meta-item-body.hover { opacity: 1; }
+
+    .meta-item-body.hover {
+      opacity: 1;
+    }
+
+    s72-availability-status,
+    s72-availability-label {
+      display: none;
+    }
   }
 }
 
@@ -53,8 +61,12 @@
 }
 
 .meta-item-synopsis {
-  display: none;
+  font-size: $small-font-size;
   overflow: hidden;
+
+  @include media-breakpoint-down(md) {
+    display: none !important;
+  }
 
   @include media-breakpoint-up(md) {
     display: flex;
@@ -86,7 +98,7 @@
   padding-top: $meta-item-caption-padding-y;
   font-size: $meta-item-caption-font-size;
 
-  .meta-item-tagline { font-size: 80%; }
+  .meta-item-tagline { font-size: $small-font-size; }
 }
 
 .featured-meta-item {
