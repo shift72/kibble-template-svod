@@ -21,6 +21,9 @@
     </div>
 
     <div class="container">
+      <s72-availability-status data-slug="{{film.Slug}}" class="meta-detail-availability-status"></s72-availability-status>
+      <s72-availability-label data-slug="{{film.Slug}}" class="meta-detail-availability-label"></s72-availability-label>
+
       <div class="meta-detail-watch-buttons">
         {{if len(film.Trailers) > 0 }}
           <s72-cant-be-watched data-slug="{{film.Slug}}">

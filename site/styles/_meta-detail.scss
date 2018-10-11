@@ -6,6 +6,14 @@
     position: relative;
   }
 }
+.meta-detail-availability-label,
+.meta-detail-availability-status {
+  @include media-breakpoint-up(lg) { display: none; }
+  top: 0;
+}
+
+.meta-detail-availability-status { right: $grid-gutter-width / 2; }
+.meta-detail-availability-label  { left: $grid-gutter-width / 2; }
 
 .meta-detail-bg {
   position: absolute;
@@ -61,7 +69,7 @@
   display: none;
 
   @include media-breakpoint-up(lg) {
-    display: flex;
+    display: block;
   }
 }
 
