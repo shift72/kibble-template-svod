@@ -11,7 +11,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <link rel="manifest" href="/manifest.json">
-    <link rel="preload" href="/{{lang.DefinitionFilePath}}" as="fetch" crossorigin type="application/json">
 
     <!-- Kibble:{{ version }} -->
     <!-- Template:{{site.SiteConfig.Version}} -->
@@ -21,8 +20,8 @@
 
     <link rel="stylesheet" href="/styles/main.css">
 
-    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
-    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="/images/common/favicon.png" type="image/png">
+    <link rel="icon" href="/images/common/favicon.png" type="image/png">
 
     {{block head()}}
       {{yield seo()}}

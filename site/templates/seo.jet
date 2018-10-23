@@ -16,8 +16,24 @@
     <meta property="og:site_name" content="{{.Seo.SiteName}}">
   {{end}}
 
+  {{if isset(.Seo) && len(.Seo.Image) > 0}}
+    <meta property="og:image" content="{{.Seo.Image}}">
+  {{end}}
+
+  {{if isset(.GetGenericItem)}}
+    {{if .GetGenericItem().ItemType == "film"}}
+      <meta property="og:type" content="video.movie">
+    {{else if .GetGenericItem().ItemType == "tvseason"}}
+      <meta property="og:type" content="video.tv_show">
+    {{end}}
+  {{end}}
+
   {{if isset(.Seo) && isset(.Seo.VideoURL)}}
-    <meta type="og:video" content="{{.Seo.VideoURL}}">
+    <meta property="og:video" content="{{.Seo.VideoURL}}">
+    {* Hardcoded values because we dont have the relevant information about trailers *}
+    <meta property="og:video:width" content="640" />
+    <meta property="og:video:height" content="426" />
+    <meta property="og:video:type" content="video/mp4" />
   {{end}}
 
   {{if isset(.Seo) && len(.Seo.Description) > 0}}

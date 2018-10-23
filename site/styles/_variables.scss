@@ -26,16 +26,16 @@ $container-max-widths: (
 
 // Body / Core
 // ------------------------------------
-$primary:         #007bff !default; // BS4 default
+$primary:         #00A2FF !default; // BS4 default: #007bff
 $body-bg:         #fff !default; // BS4 default
 $body-color:      #212529 !default; // BS4 default
 
 // Nav
 // ------------------------------------
 
-$navbar-logo-width: 153px; // width of raw logo
+$navbar-logo-width: 30px; // width of raw logo
 $navbar-logo-width-min: $navbar-logo-width;
-$navbar-brand-padding-y: 20px;
+$navbar-brand-padding-y: 15px; // half the height
 
 $navbar-nav-link-padding-x:  1rem;
 $navbar-nav-link-padding-y:  1rem;

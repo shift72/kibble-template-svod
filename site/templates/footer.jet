@@ -11,18 +11,20 @@
 
 	<div class="footer-branding">
 
-		<a href="/" class="footer-branding-brand">
-			ScreenPlus
-		</a>
+		{*
+    <a href="/" class="footer-branding-brand">
+      ScreenPlus
+    </a>
 
     <p class="footer-branding-powered-by">
       <a href="http://www.screenplus.co" target="_blank">
         <span>Powered by ScreenPlus</span>
       </a>
     </p>
+    *}
 
     <p class="footer-branding-copyright">
-      &copy; ScreenPlus - All Rights Reserved.
+      &copy; {{i18n("footer_branding_copyright")}}
     </p>
 
 	</div>

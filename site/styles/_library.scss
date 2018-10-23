@@ -1,9 +1,9 @@
 .s72-userlibrary-items {
-  @extend .row;
+  @extend .page-collection-list-item-wrapper;
 
   .meta-item {
-    @extend .slider-item;
-    @extend .slider-item-6;
+    @extend .page-collection-item;
+    @extend .page-collection-item-6;
     padding-bottom: $grid-gutter-width;
   }
 }

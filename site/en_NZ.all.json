@@ -24,6 +24,10 @@
   "nav_devices": { "other": "My Devices" },
   "nav_account": { "other": "My Account" },
   "nav_signout": { "other": "Sign Out" },
+
+  "nav_branding_title": { "other": "Shift72" },
+  "footer_branding_copyright": { "other": "Shift72 - All Rights Reserved." },
+
   "play_trailer": { "other": "Watch Trailer" },
   "runtime_hours": { "other": "h" },
   "runtime_minutes": { "other": "m" },

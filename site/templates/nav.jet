@@ -1,6 +1,6 @@
 {{block nav()}}
   <nav class="navbar navbar-expand-md">
-    <a class="navbar-brand" href="/">SCREENPLUS</a>
+    <a class="navbar-brand" href="/">{{i18n("nav_branding_title")}}</a>
     <button class="navbar-toggler" type="button" s72-collapse=".collapse" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
       <span class="icon-navbar-toggler"></span>
     </button>
