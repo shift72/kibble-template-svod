@@ -44,4 +44,11 @@
       </div>
     </div>
   </div>
+
+  {*
+    Currently, this is the only page that triggers the purchase process so we only need the transactional scripts here.
+    So lets not bog down the rest of the site with them (especially stripe).
+  *}
+  <script src="{{CDN}}/s72.transactional.js"></script>
+  <script src="//js.stripe.com/v3/"></script>
 {{end}}

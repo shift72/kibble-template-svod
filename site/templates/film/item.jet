@@ -7,11 +7,6 @@
   {{yield seo() film}}
 {{end}}
 
-{* Hide Sub nav on this page *}
-{{block navigation()}}
-  {{yield nav(showSubNav=false)}}
-{{end}}
-
 {{block body()}}
   <div class="page page-film meta-detail meta-detail-film">
 
@@ -86,7 +81,7 @@
 
           {{if len(film.Bonuses) > 0 }}
             <div class="meta-detail-bonus-content">
-              <h3>{{i18n("meta_detail_bonus_title")}}</h4>
+              <h3>{{i18n("meta_detail_bonus_title")}}</h3>
               {{yield slider(itemsPerRow=6, itemLayout="landscape") content}}
                 {{range bonus := film.Bonuses}}
                   <div class="slider-item slider-item-6">
