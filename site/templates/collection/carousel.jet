@@ -4,9 +4,6 @@
 	{*
 		Image width and height are here to help with resizing, there might be another way doing it,
 		but I didnt want to have to rely on images loading like the web-core carousel.
-
-		None of the html in .carousel-item is finished or even 10% looked at, so feel free to make it better.
-		This was copypasted from web-core.
 	*}
 	<s72-carousel data-image-width="1600" data-image-height="600">
 		<div class="page-collection page-collection-carousel">
