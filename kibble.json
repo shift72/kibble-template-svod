@@ -1,8 +1,8 @@
 {
   "name": "kibble-template-svod",
   "version": "0.0.3",
-  "siteUrl": "https://staging-studio-kibble.shift72.com",
-  "builderVersion": "0.10.6",
+  "siteUrl": "https://studio-kibble.shift72.com",
+  "builderVersion": "0.10.8",
   "defaultLanguage": "en",
   "languages": {
     "en": "en_NZ"
