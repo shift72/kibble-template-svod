@@ -262,6 +262,8 @@
   "shopping_error_discounts_not_allowed": { "other": "That promo code can not be used." },
   "shopping_error_discount_disallowed_on_bundles": { "other": "That promo code can not be used on bundles." },
 
+  "shopping_error_plan_already_owned": { "other": "You already have a current subscription to {{.Title}}." },
+
   "shopping_action_buy": { "other": "Buy" },
   "shopping_action_rent": { "other": "Rent" },
   "shopping_action_credit": { "other": "Top up" },

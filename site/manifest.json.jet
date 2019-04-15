@@ -1,15 +1,15 @@
 {
-  "short_name": "Screen Plus",
-  "name": "Screen Plus",
+  "short_name": "Shift72 Channel",
+  "name": "Shift72 Channel",
   "icons": [
     {
-      "src": "/images/common/icons-192.png",
+      "src": "/images/common/logo.png",
       "type": "image/png",
-      "sizes": "192x192"
+      "sizes": "30x30"
     }
   ],
   "start_url": "/",
-  "background_color": "#222",
+  "background_color": "#fff",
   "display": "standalone",
-  "theme_color": "#222"
+  "theme_color": "rgb(33, 37, 41)"
 }
