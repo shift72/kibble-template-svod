@@ -2,6 +2,13 @@
 
 {{block head()}}
   {{yield seo(title=i18n("plans_page_header"), index=false)}}
+
+  {*
+    Currently, there are only 2 pages (plans, subscriptions) that need shopping or subscriptions related components.
+    So lets not bog down the rest of the site with them (especially stripe).
+  *}
+  <script src="{{CDN}}/s72.transactional.js" defer></script>
+  <script src="//js.stripe.com/v3/" defer></script>
 {{end}}
 
 {{block body()}}
@@ -44,13 +51,4 @@
       </div>
     </div>
   </div>
-
-  {*
-    Currently, there are only 2 pages that need shopping or subscriptions related components.
-    So lets not bog down the rest of the site with them (especially stripe).
-  *}
-  <script>
-    s72.js('{{CDN}}/s72.transactional.js');
-    s72.js('//js.stripe.com/v3/');
-  </script>
 {{end}}
