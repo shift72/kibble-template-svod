@@ -25,6 +25,7 @@
 
 .s72-btn-changepassword { @extend .btn-secondary; }
 .s72-btn-updateaccount { @extend .btn-primary; }
+
 .s72-btn-signup { @extend .btn-primary; }
 .s72-btn-signin { @extend .btn-primary; }
 .s72-btn-forgotpassword { @extend .btn-primary; }
@@ -33,6 +34,9 @@
 
 .s72-btn-modal-action { @extend .btn-primary; }
 .s72-btn-modal-cancel { @extend .btn-outline-secondary; }
+
+.s72-btn-updatecard { @extend .btn-primary; }
+.s72-btn-cancel-updatecard { @extend .btn-outline-secondary; }
 
 .s72-btn-combined-auth { @extend .btn-primary; }
 .s72-btn-combined-auth-change { @extend .btn-link; }
@@ -188,4 +192,22 @@ s72-cant-be-watched {
 .s72-prompt {
   @extend p;
   @extend .text-center;
+}
+
+.s72-subscriptions-change-payment-method {
+  border: 1px solid rgba(0,0,0,0.125);
+  padding: $list-group-item-padding-y $list-group-item-padding-x;
+  margin-bottom: 1em;
+
+  #new-card-container, #old-card-container {
+    padding-bottom: $list-group-item-padding-y;
+  }
+
+  #old-card-container span {
+    padding-left: 5px;
+  }
+
+  button {
+    margin-right: $list-group-item-padding-x;
+  }
 }
