@@ -24,8 +24,6 @@
           <s72-changesubscriptionpaymentmethod></s72-changesubscriptionpaymentmethod>
         </div>
 
-        <hr />
-
         <h3>{{ i18n("usersubscriptions_subscriptions_section_title") }}</h3>
         <p>{{i18n("usersubscriptions_subscriptions_section_content")}}</p>
         <s72-usersubscriptions />
