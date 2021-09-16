@@ -352,6 +352,11 @@
   "usersubscriptions_change_payment_method_modal_submit": { "other": "Update" },
 
   "shopping_card_update_reason_none": { "other": "Update your credit card. Supported cards are Visa, Mastercard and American Express." },
-  "shopping_card_update_reason_expired": { "other": "Please update your card to resume your subsubscription. Supported cards are Visa, Mastercard and American Express." }
+  "shopping_card_update_reason_expired": { "other": "Please update your card to resume your subsubscription. Supported cards are Visa, Mastercard and American Express." },
+
+  "plan_page_read_more": { "other": "Read more" },
+  "plan_page_header_text": { "other": "Enjoy {{.Name}}" },
+  "page_plan_explore_link": { "other": "Explore other passes" }
+
 
 }

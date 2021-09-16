@@ -1,6 +1,17 @@
 {{extends "templates/application.jet"}}
 {{import "templates/collection/page_collection.jet"}}
 
+{{block head()}}
+  {*
+    Only load transactional components if this page has plans associated with it
+  *}
+  {{ if(len(page.Plans)) }}
+  <script src="{{CDN}}/s72.transactional.js" defer></script>
+  <script src="//js.stripe.com/v3/" defer></script>
+  {{ end }}
+{{end}}
+
+
 {{block body()}}
 <div class="page page-{{page.PageType}} curated-page">
   <div class="container">
@@ -13,6 +24,14 @@
       {{page.Content | raw}}
     </div>
     {{end}}
+
+    {{if len(page.Plans)}}
+      {{ p := page.Plans[0] }}
+      <div>
+        <s72-pricing-buttons data-slug="{{p.Slug}}" data-title="{{p.Name}}" />
+        <s72-plan-label data-slug="{{p.Slug}}" data-title="{{p.Name}}" />
+      </div>
+    {{end}}
   </div>
 
   <div class="page-collections">
@@ -20,6 +39,23 @@
       {{yield pageCollection() pf}}
     {{end}}
   </div>
+
+  {{ if len(page.Plans) }}
+    {{ p := page.Plans[0] }}
+
+  <div class="container">
+    <div class="page-passes">
+      <h2>{{ i18n("plan_page_header_text", map("Name", p.Name)) }}</h2>
+      <div>{{ p.Description }}</div>
+      <div>
+        <s72-pricing-buttons data-slug="{{p.Slug}}" data-title="{{p.Name}}" />
+        <s72-plan-label data-slug="{{p.Slug}}" data-title="{{p.Name}}" />
+      </div>
+      <div><a href="/passes.html">{{ i18n("page_plan_explore_link") }}</a></div>
+    </div>
+  </div>
+
+  {{ end }}
 
 </div>
 {{end}}

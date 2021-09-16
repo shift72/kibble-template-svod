@@ -29,6 +29,9 @@
                 <div class="plan-caption">
                   <div class="plan-name">{{p.Name}}</div>
                   <div class="plan-description">{{p.Description}}</div>
+                  {{ if p.Page }}
+                    <div class="plan-page-link"><a href="{{ routeToSlug(p.Page.Slug) }}">{{i18n("plan_read_more")}}</a></div>
+                  {{ end }}
                 </div>
 
                 {{ if p.Interval }}
